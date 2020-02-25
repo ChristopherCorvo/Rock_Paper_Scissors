@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors Shoot Game</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    
+    let humanscore = 0;
+    let computerscore = 0;
+    let newscore1 = 0;
+    let newscore2 = 0;
+    
+    function gameRules(){
+    // This generates the humans input
+    let human = prompt('Type rock, paper, or scissors').toLowerCase();
+    console.log(human);
+    
+    //This generates the computers input
+    const choices = ['rock', 'paper', 'scissors']; 
+    let computer = choices[Math.floor(Math.random()* choices.length)];
+    console.log(computer);
+ 
+    let lose = ('You Lose ' + computer + ' beats ' + human + '.');
+    let win = ('You win! ' + human + ' beats ' + computer + '.');
+    
+
+  //  Next steps take the input from human() and the 
+  // input from computer() and do a comparison based
+  // on the rules of the game.....
+     
+      if (human === computer){
+        let Tie = alert('Tie.You both selected' + ' ' + computer); // 0
+          humanscore = humanscore;
+         // console.log(score);
+          return(newscore1 = humanscore);
+          
+      }
+      else if (human === 'scissors' && computer === 'rock'){   // -1
+        alert(lose);
+        computerscore = computerscore + 1;
+        //console.log(score);
+        return(newscore2 = computerscore);
+      }
+      
+      else if(human === 'paper' && computer === 'scissors'){ // -1
+        alert(lose);
+        computerscore = computerscore + 1;
+        //console.log(score);
+        return(newscore2 = computerscore);
+        
+      }
+      else if (human === 'rock' && computer === 'paper'){ // -1
+        alert(lose);
+        computerscore = computerscore + 1;
+        //console.log(score);
+        return(newscore2 = computerscore); 
+      }
+
+      else if(human === 'paper' && computer === 'rock'){ // +1
+        alert(win);
+        humanscore = humanscore +1;
+        //console.log(score);
+        return(newscore1 = humanscore);  
+      }
+      
+      else if (human === 'rock' && computer === 'scissors'){ // +1
+        alert(win);
+        humanscore = humanscore + 1;
+        //console.log(score);
+        return(newscore1 = humanscore);
+      }
+      
+      else if (human === 'scissors' && computer === 'paper'){ // +1
+        alert(win)
+        humanscore = humanscore + 1;
+        //console.log('You get 1 ');
+        return(newscore1 = humanscore);
+      } 
+      
+    }  
+    
+    
+// a loop could be used to simplify the below function
+// in this function we will call the gameRule() function 5 times and will keep score of each round in the console. 
+  
+     
+  function game() {
+    
+    gameRules() 
+    gameRules()
+    gameRules()
+    gameRules()
+        console.log('Final scores: ' + 'The computer has a score of ' + newscore2 + ' You have a score of ' + newscore1);
+        if (newscore1 > newscore2) {
+            console.log('Congratulations, you win the game!!!')
+        }
+        else {
+            console.log('Sorry you lose. Refresh and try again.')
+        }
+    }
+
+  gameRules()
+  game()
+
+  
+    </script>
+</body>
+</html>
